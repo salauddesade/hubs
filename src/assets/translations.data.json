@@ -288,6 +288,7 @@
     "preferences.disableTeleporter": "Disable teleporter",
     "preferences.movementSpeedModifier": "Movement speed modifier",
     "preferences.disableAutoPixelRatio": "Disable automatic pixel ratio adjustments",
+    "preferences.invertTouchscreenCameraMove": "Invert direction of camera movement for touchscreens",
     "settings.return-to-vr": "Return to VR",
     "settings.change-avatar": "Set Name & Avatar",
     "settings.change-scene": "Choose a Scene",

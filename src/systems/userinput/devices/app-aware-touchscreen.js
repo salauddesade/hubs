@@ -175,11 +175,14 @@ export class AppAwareTouchscreenDevice {
           -(touch.clientY / window.innerHeight) * 2 + 1
         );
         break;
-      case MOVE_CAMERA_JOB://FairintheClouds: Switching this to invert the joystick-style reverse camera movement on touchscreens.
-        //assignment.delta[0] += touch.clientX - assignment.clientX;
-        //assignment.delta[1] += touch.clientY - assignment.clientY;
-        assignment.delta[0] -= touch.clientX - assignment.clientX;
-        assignment.delta[1] -= touch.clientY - assignment.clientY;
+    case MOVE_CAMERA_JOB:
+	if (window.APP.store.state.preferences.invertTouchscreenCameraMove) {
+            assignment.delta[0] += touch.clientX - assignment.clientX;
+            assignment.delta[1] += touch.clientY - assignment.clientY;
+	} else {
+            assignment.delta[0] -= touch.clientX - assignment.clientX;
+            assignment.delta[1] -= touch.clientY - assignment.clientY;
+	}
         assignment.clientX = touch.clientX;
         assignment.clientY = touch.clientY;
         break;
